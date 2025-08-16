@@ -1,2 +1,4 @@
 # PrivacyCall
-Creada para solucionar un problema en las conversaciones privadas entre usuarios, donde existe la posibilidad de que se filtre informacion de las personas, por utilizar dispositivos móviles o fijos, bluethooth en el audio del vehiculó o altavozes portatil y manos libre tambien otros dispositivos, donde podría escuchar una tercera persona que no tiene autorizacion en la conversación, sin un previo aviso que esta situación esta pasando por diferentes motivos o razones, donde se vulnera la privacidad de la conversación, afectando la confianza entre los usuarios, la seguridad compartida restablece la confianza perdidad 
+PrivacyCall atiende a una vulnerabilidad crítica en la privacidad de las conversaciones. El uso de dispositivos de manos libres, como el sistema Bluetooth del vehículo o altavoces portátiles, crea el riesgo de que terceros no autorizados escuchen conversaciones privadas sin consentimiento.
+
+Esta exposición involuntaria vulnera la privacidad y mina la confianza entre los participantes. PrivacyCall restaura esa confianza a través de una función de seguridad compartida, asegurando que la conversación se mantenga realmente privada. 
