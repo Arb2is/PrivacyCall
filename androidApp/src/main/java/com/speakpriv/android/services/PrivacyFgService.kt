@@ -7,12 +7,16 @@ import android.app.Service
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.speakpriv.engine.PrivacyCallController
 import com.speakpriv.android.R
 import com.speakpriv.android.implementations.*
+import com.speakpriv.model.Exposure
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class PrivacyFgService : Service() {
 
@@ -24,7 +28,7 @@ class PrivacyFgService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val callId = intent?.getStringExtra(EXTRA_CALL_ID) ?: return START_NOT_STICKY
 
-        val notification = createNotification()
+        val notification = createNotification("Starting...")
         startForeground(NOTIFICATION_ID, notification)
 
         // Instantiate KMP components
@@ -44,7 +48,19 @@ class PrivacyFgService : Service() {
         )
         controller?.start()
 
-        // TODO: Observe controller state and update notification
+        controller?.localState
+            ?.onEach { exposure ->
+                FirebaseCrashlytics.getInstance().setCustomKey("localExposure", exposure.name)
+                val text = when (exposure) {
+                    Exposure.EXPOSED -> "🔴 Speakerphone on"
+                    Exposure.PRIVATE -> "🟢 Privacy protected"
+                    Exposure.UNVERIFIED -> "🟡 Not verified"
+                }
+                val updated = createNotification(text)
+                val manager = getSystemService(NotificationManager::class.java)
+                manager.notify(NOTIFICATION_ID, updated)
+            }
+            ?.launchIn(scope)
 
         return START_STICKY
     }
@@ -55,7 +71,7 @@ class PrivacyFgService : Service() {
         super.onDestroy()
     }
 
-    private fun createNotification(): Notification {
+    private fun createNotification(content: String): Notification {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(CHANNEL_ID, "Privacy Call", NotificationManager.IMPORTANCE_LOW)
             val manager = getSystemService(NotificationManager::class.java)
@@ -64,7 +80,7 @@ class PrivacyFgService : Service() {
 
         return Notification.Builder(this, CHANNEL_ID)
             .setContentTitle("SpeakPriv")
-            .setContentText("Monitoring call privacy...")
+            .setContentText(content)
             .setSmallIcon(R.drawable.ic_launcher_foreground) // Placeholder icon
             .build()
     }

@@ -1,0 +1,14 @@
+ES:
+Consentimiento: "Comparte solo un estado binario (sí/no) para avisar si el otro usa altavoz. No grabamos ni enviamos audio. Puedes desactivarlo en Ajustes."
+Rojo: "Estás en altavoz. Otros pueden oírte." CTA: "Apagar altavoz"
+Amarillo: "Precaución: el otro no está verificado." CTA: "Compartir seguridad"
+
+EN:
+Consent: "We only share a binary flag to warn if the other uses speakerphone. We never record or send audio. You can disable it in Settings."
+Red: "You are on speakerphone. Others may hear you." CTA: "Turn off speakerphone"
+Yellow: "Caution: peer not verified." CTA: "Share protection"
+
+PT:
+Consentimento: "Compartilhamos apenas um sinal binário para avisar se o outro usa viva-voz. Não gravamos nem enviamos áudio. Você pode desativar nos Ajustes."
+Vermelho: "Você está no viva-voz. Outros podem ouvir." CTA: "Desligar viva-voz"
+Amarelo: "Atenção: o outro não está verificado." CTA: "Compartilhar proteção"

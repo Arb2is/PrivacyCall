@@ -5,19 +5,14 @@ package com.speakpriv.model
  */
 enum class Exposure {
     /**
-     * The connection is being established, state is not yet known.
+     * The participant is using a public audio device (speakerphone, external speaker).
      */
-    CONNECTING,
+    EXPOSED,
 
     /**
      * The participant is using a private audio device (earpiece, headset).
      */
     PRIVATE,
-
-    /**
-     * The participant is using a public audio device (speakerphone, external speaker).
-     */
-    EXPOSED,
 
     /**
      * The other participant does not have the app or the security handshake failed.

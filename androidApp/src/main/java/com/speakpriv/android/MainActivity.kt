@@ -9,15 +9,24 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import com.speakpriv.api.ConsentStore
+import com.speakpriv.android.implementations.AlertPrefs
 import com.speakpriv.android.implementations.ConsentStorePrefs
+import com.speakpriv.android.implementations.InviteSharerAndroid
+import com.speakpriv.android.implementations.SpeakerphoneControllerAndroid
+import com.speakpriv.android.ui.SpeakFreelyScreen
+import com.speakpriv.android.ui.SpeakPrivTheme
+import com.speakpriv.model.Exposure
+import com.speakpriv.model.SpeakUiState
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class MainActivity : ComponentActivity() {
 
@@ -26,7 +35,7 @@ class MainActivity : ComponentActivity() {
     private val roleRequest = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             consentStore.setGranted(true)
-            // You can add a toast or a message here to confirm
+            FirebaseCrashlytics.getInstance().setCustomKey("roleGranted", true)
         }
     }
 
@@ -35,8 +44,45 @@ class MainActivity : ComponentActivity() {
         consentStore = ConsentStorePrefs(this)
 
         setContent {
-            MaterialTheme {
-                MainScreen(consentStore.isGranted()) { requestRole() }
+            SpeakPrivTheme {
+                val prefs = AlertPrefs(this)
+                val speaker = SpeakerphoneControllerAndroid(this)
+                val sharer = InviteSharerAndroid(this)
+                val initialState = SpeakUiState(
+                    local = if (speaker.isSpeakerOn()) Exposure.EXPOSED else Exposure.PRIVATE,
+                    contactName = "Contact",
+                    soundEnabled = prefs.soundEnabled,
+                    vibrationEnabled = prefs.vibrationEnabled,
+                    ledEnabled = prefs.ledEnabled
+                )
+                val state = remember { mutableStateOf(initialState) }
+
+                if (consentStore.isGranted()) {
+                    SpeakFreelyScreen(
+                        state = state.value,
+                        onToggleSpeaker = {
+                            val new = !speaker.isSpeakerOn()
+                            speaker.setSpeaker(new)
+                            state.value = state.value.copy(local = if (new) Exposure.EXPOSED else Exposure.PRIVATE)
+                        },
+                        onShare = { sharer.share() },
+                        onEndCall = { /* stop service */ },
+                        onToggleSound = {
+                            prefs.soundEnabled = it
+                            state.value = state.value.copy(soundEnabled = it)
+                        },
+                        onToggleVibration = {
+                            prefs.vibrationEnabled = it
+                            state.value = state.value.copy(vibrationEnabled = it)
+                        },
+                        onToggleLed = {
+                            prefs.ledEnabled = it
+                            state.value = state.value.copy(ledEnabled = it)
+                        }
+                    )
+                } else {
+                    MainScreen(false) { requestRole() }
+                }
             }
         }
     }
