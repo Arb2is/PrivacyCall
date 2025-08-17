@@ -18,13 +18,11 @@ class PrivacyCallController(
     private val coroutineScope: CoroutineScope
 ) {
 
-    private val _localState = MutableStateFlow(Exposure.CONNECTING)
+    private val _localState = MutableStateFlow(Exposure.UNVERIFIED)
     val localState: StateFlow<Exposure> = _localState.asStateFlow()
 
-    private val _remoteState = MutableStateFlow(Exposure.CONNECTING)
+    private val _remoteState = MutableStateFlow(Exposure.UNVERIFIED)
     val remoteState: StateFlow<Exposure> = _remoteState.asStateFlow()
-
-    private var handshakeJob: Job? = null
 
     fun start() {
         if (!consentStore.isGranted()) {
@@ -41,7 +39,6 @@ class PrivacyCallController(
     fun stop() {
         audioMonitor.stop()
         flagChannel.close()
-        handshakeJob?.cancel()
         coroutineScope.cancel() // Cancel the scope to clean up all coroutines
     }
 
@@ -65,20 +62,11 @@ class PrivacyCallController(
             flagChannel.connect(callId)
             monitorRemoteExposure()
         }
-
-        // Handshake timeout
-        handshakeJob = coroutineScope.launch {
-            delay(3000)
-            if (_remoteState.value == Exposure.CONNECTING) {
-                _remoteState.value = Exposure.UNVERIFIED
-            }
-        }
     }
 
     private fun monitorRemoteExposure() {
         flagChannel.remoteExposure
             .onEach { isExposed ->
-                handshakeJob?.cancel() // Handshake successful
                 _remoteState.value = when (isExposed) {
                     null -> Exposure.UNVERIFIED // Connection lost
                     true -> Exposure.EXPOSED
