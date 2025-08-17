@@ -9,24 +9,18 @@ kotlin {
             kotlinOptions { jvmTarget = "1.8" }
         }
     }
-    
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 // Common dependencies
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
         val androidMain by getting {
             dependencies {
                 // Android-specific dependencies
             }
-        }
-        val iosMain by getting {
-            // Empty for now, but structure is ready
         }
     }
 }

@@ -1,0 +1,28 @@
+[
+  {
+    "binaryType": "KOTLIN_COMPILE",
+    "classpath": [
+      "C:\\Users\\DENOB\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk8\\1.8.20\\73576ddf378c5b4f1f6b449fe6b119b8183fc078\\kotlin-stdlib-jdk8-1.8.20.jar"
+    ],
+    "coordinates": "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20",
+    "extras": {
+      "org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver;resolvedBy": "org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeOriginalMetadataDependencyResolver",
+      "org.jetbrains.kotlin.gradle.idea.tcs.IdeaKotlinClasspath;sourcesClasspath": [
+        "C:\\Users\\DENOB\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk8\\1.8.20\\20739e7aae2a2bfb66c4081b233ffea7b947cf77\\kotlin-stdlib-jdk8-1.8.20-sources.jar"
+      ]
+    }
+  },
+  {
+    "binaryType": "KOTLIN_COMPILE",
+    "classpath": [
+      "C:\\Users\\DENOB\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk7\\1.8.20\\3aa51faf20aae8b31e1a4bc54f8370673d7b7df4\\kotlin-stdlib-jdk7-1.8.20.jar"
+    ],
+    "coordinates": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20",
+    "extras": {
+      "org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver;resolvedBy": "org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeOriginalMetadataDependencyResolver",
+      "org.jetbrains.kotlin.gradle.idea.tcs.IdeaKotlinClasspath;sourcesClasspath": [
+        "C:\\Users\\DENOB\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib-jdk7\\1.8.20\\3641d7cb7650db9fe93a5361b1b88cbcefdb01e0\\kotlin-stdlib-jdk7-1.8.20-sources.jar"
+      ]
+    }
+  }
+]

@@ -1,0 +1,133 @@
+C:\Users\DENOB\.gradle\caches\8.14.3\transforms\f607d3c8f92e8cad263216eeca25fccf\transformed\jetified-runtime-release\jars\lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.compose.runtime.lint.RuntimeIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/compose/runtime/lint/AutoboxingStateCreationDetector.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+AutoboxingStateValueProperty
+AutoboxingStateCreation
+CoroutineCreationDuringComposition
+FlowOperatorInvokedInComposition
+ComposableLambdaParameterNaming
+ComposableLambdaParameterPosition
+ComposableNaming
+StateFlowValueCalledInComposition
+CompositionLocalNaming
+MutableCollectionMutableState
+ProduceStateDoesNotAssignValue
+RememberReturnType
+OpaqueUnitKey
+UnrememberedMutableState
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+
+   Explanation for issues of type "ObsoleteLintCustomCheck":
+   Lint can be extended with "custom checks": additional checks implemented by
+   developers and libraries to for example enforce specific API usages
+   required by a library or a company coding style guideline.
+
+   The Lint APIs are not yet stable, so these checks may either cause a
+   performance degradation, or stop working, or provide wrong results.
+
+   This warning flags custom lint checks that are found to be using obsolete
+   APIs and will need to be updated to run in the current lint environment.
+
+   It may also flag issues found to be using a newer version of the API,
+   meaning that you need to use a newer version of lint (or Android Studio or
+   Gradle plugin etc) to work with these checks.
+
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\src\main\AndroidManifest.xml:36: Error: foregroundServiceType:phoneCall requires permission:[android.permission.FOREGROUND_SERVICE_PHONE_CALL] AND any permission in list:[android.permission.MANAGE_OWN_CALLS] [ForegroundServicePermission]
+        <service
+        ^
+
+   Explanation for issues of type "ForegroundServicePermission":
+   For targetSdkVersion >= 34, each foregroundServiceType listed in the
+   <service> element requires specific sets of permissions to be declared in
+   the manifest. If permissions are missing, then when the foreground service
+   is started with a foregroundServiceType that has missing permissions, a
+   SecurityException will be thrown.
+
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.2.2 is available: 8.12.0 [GradleDependency]
+agp = "8.2.2"
+      ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:2: Warning: A newer version of com.android.library than 8.2.2 is available: 8.12.0 [GradleDependency]
+agp = "8.2.2"
+      ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:6: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+androidx-activityCompose = "1.8.2"
+                           ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:7: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+androidx-appcompat = "1.6.1"
+                     ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:8: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.17.0 [GradleDependency]
+androidx-core-ktx = "1.12.0"
+                    ~~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:9: Warning: A newer version of androidx.compose.material:material than 1.6.0 is available: 1.9.0 [GradleDependency]
+compose = "1.6.0"
+          ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:9: Warning: A newer version of androidx.compose.ui:ui than 1.6.0 is available: 1.9.0 [GradleDependency]
+compose = "1.6.0"
+          ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:9: Warning: A newer version of androidx.compose.ui:ui-tooling than 1.6.0 is available: 1.9.0 [GradleDependency]
+compose = "1.6.0"
+          ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:9: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.0 is available: 1.9.0 [GradleDependency]
+compose = "1.6.0"
+          ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:9: Warning: Upgrade androidx.compose.foundation for keyboard and mouse support [GradleDependency]
+compose = "1.6.0"
+          ~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:11: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.22 is available: 2.0.21 [GradleDependency]
+kotlin = "1.9.22"
+         ~~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-core than 1.7.3 is available: 1.9.0 [GradleDependency]
+kotlinx-coroutines = "1.7.3"
+                     ~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\src\main\java\com\speakpriv\android\implementations\AudioPrivacyMonitorAndroid.kt:52: Warning: Switch statement on an int with known associated constant missing case AudioDeviceInfo.TYPE_AUX_LINE, AudioDeviceInfo.TYPE_BLE_BROADCAST, AudioDeviceInfo.TYPE_BLE_HEADSET, AudioDeviceInfo.TYPE_BLE_SPEAKER, AudioDeviceInfo.TYPE_BUILTIN_MIC, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER_SAFE, AudioDeviceInfo.TYPE_BUS, AudioDeviceInfo.TYPE_DOCK, AudioDeviceInfo.TYPE_DOCK_ANALOG, AudioDeviceInfo.TYPE_FM, AudioDeviceInfo.TYPE_FM_TUNER, AudioDeviceInfo.TYPE_HDMI_ARC, AudioDeviceInfo.TYPE_HDMI_EARC, AudioDeviceInfo.TYPE_HEARING_AID, AudioDeviceInfo.TYPE_IP, AudioDeviceInfo.TYPE_LINE_ANALOG, AudioDeviceInfo.TYPE_LINE_DIGITAL, AudioDeviceInfo.TYPE_REMOTE_SUBMIX, AudioDeviceInfo.TYPE_TELEPHONY, AudioDeviceInfo.TYPE_TV_TUNER, AudioDeviceInfo.TYPE_USB_ACCESSORY [SwitchIntDef]
+            when (device.type) {
+            ~~~~
+
+   Explanation for issues of type "SwitchIntDef":
+   This check warns if a switch statement does not explicitly include all the
+   values declared by the typedef @IntDef declaration.
+
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\src\main\java\com\speakpriv\android\implementations\AudioPrivacyMonitorAndroid.kt:15: Warning: Unnecessary; SDK_INT is always >= 23 [ObsoleteSdkInt]
+@RequiresApi(Build.VERSION_CODES.M)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\src\main\java\com\speakpriv\android\services\PrivacyFgService.kt:59: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\src\main\AndroidManifest.xml:12: Warning: Should explicitly set android:icon, there is no default [MissingApplicationIcon]
+    <application
+     ~~~~~~~~~~~
+
+   Explanation for issues of type "MissingApplicationIcon":
+   You should set an icon for the application as whole because there is no
+   default. This attribute must be set as a reference to a drawable resource
+   containing the image (for example @drawable/icon).
+
+   https://developer.android.com/studio/publish/preparing#publishing-configure
+
+1 errors, 17 warnings

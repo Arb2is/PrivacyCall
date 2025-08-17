@@ -1,0 +1,8 @@
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeDependsOnDependencyResolver 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeFriendSourceDependencyResolver 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver$Companion$empty$1 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.IdeAdditionalArtifactResolver$Companion$empty$1 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeVisibleMultiplatformSourceDependencyResolver 17.ms
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeOriginalMetadataDependencyResolver 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeBinaryDependencyResolver 0.ms
+org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeArtifactResolutionQuerySourcesResolver 1.ms

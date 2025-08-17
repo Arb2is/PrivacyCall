@@ -1,0 +1,9 @@
+com.speakpriv.shared-pngs-0 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\build\generated\res\pngs\release
+com.speakpriv.shared-resValues-1 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\build\generated\res\resValues\release
+com.speakpriv.shared-mergeReleaseResources-2 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.speakpriv.shared-mergeReleaseResources-3 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.speakpriv.shared-merged_res-4 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\build\intermediates\merged_res\release
+com.speakpriv.shared-androidMain-5 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\src\androidMain\res
+com.speakpriv.shared-androidRelease-6 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\src\androidRelease\res
+com.speakpriv.shared-main-7 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\src\main\res
+com.speakpriv.shared-release-8 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\shared\src\release\res

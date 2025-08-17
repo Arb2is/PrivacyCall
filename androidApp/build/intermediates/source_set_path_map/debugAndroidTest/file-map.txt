@@ -1,0 +1,4 @@
+com.speakpriv.android.test.androidApp-androidTest-0 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\build\generated\res\resValues\androidTest\debug
+com.speakpriv.android.test.androidApp-mergeDebugAndroidTestResources-1 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.speakpriv.android.test.androidApp-mergeDebugAndroidTestResources-2 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.speakpriv.android.test.androidApp-merged_res-3 C:\Users\DENOB\Desktop\PrivacyCall\PrivacyCall-2\androidApp\build\intermediates\merged_res\debugAndroidTest

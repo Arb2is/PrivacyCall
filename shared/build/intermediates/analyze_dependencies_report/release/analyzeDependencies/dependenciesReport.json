@@ -1,0 +1,8 @@
+{
+  "add": [
+    "org.jetbrains.kotlin:kotlin-stdlib:1.9.22",
+    "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3",
+    "org.jetbrains:annotations:23.0.0"
+  ],
+  "remove": []
+}

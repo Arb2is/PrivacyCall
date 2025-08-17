@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.2.2" type="conditional_incidents">
+
+    <incident
+        id="ForegroundServicePermission"
+        severity="error"
+        message="foregroundServiceType:phoneCall requires permission:[android.permission.FOREGROUND_SERVICE_PHONE_CALL] AND any permission in list:[android.permission.MANAGE_OWN_CALLS]">
+        <location
+            file="${:androidApp*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="36"
+            column="9"
+            startOffset="1498"
+            endLine="40"
+            endColumn="57"
+            endOffset="1689"/>
+        <map>
+            <condition targetGE="34"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:androidApp*debug*MAIN*sourceProvider*0*javaDir*0}/com/speakpriv/android/implementations/AudioPrivacyMonitorAndroid.kt"
+                startOffset="461"
+                endOffset="496"/>
+        </fix-replace>
+        <location
+            file="${:androidApp*debug*MAIN*sourceProvider*0*javaDir*0}/com/speakpriv/android/implementations/AudioPrivacyMonitorAndroid.kt"
+            line="15"
+            column="1"
+            startOffset="461"
+            endLine="15"
+            endColumn="36"
+            endOffset="496"/>
+        <map>
+            <condition minGE="ffffffffffc00000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 29">
+        <fix-replace
+            description="Delete @RequiresApi"
+            replacement="">
+            <range
+                file="${:androidApp*debug*MAIN*sourceProvider*0*javaDir*0}/com/speakpriv/android/services/CallGuardScreeningService.kt"
+                startOffset="206"
+                endOffset="241"/>
+        </fix-replace>
+        <location
+            file="${:androidApp*debug*MAIN*sourceProvider*0*javaDir*0}/com/speakpriv/android/services/CallGuardScreeningService.kt"
+            line="9"
+            column="1"
+            startOffset="206"
+            endLine="9"
+            endColumn="36"
+            endOffset="241"/>
+        <map>
+            <condition minGE="fffffffff0000000"/>
+        </map>
+    </incident>
+
+</incidents>

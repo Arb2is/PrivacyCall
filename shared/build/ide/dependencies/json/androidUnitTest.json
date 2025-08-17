@@ -1,0 +1,23 @@
+[
+  {
+    "type": "DependsOn",
+    "coordinates": ":shared::shared/commonTest",
+    "extras": {
+      "org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver;resolvedBy": "org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeDependsOnDependencyResolver"
+    }
+  },
+  {
+    "type": "Friend",
+    "coordinates": ":shared::shared/androidMain",
+    "extras": {
+      "org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver;resolvedBy": "org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeFriendSourceDependencyResolver"
+    }
+  },
+  {
+    "type": "Friend",
+    "coordinates": ":shared::shared/commonMain",
+    "extras": {
+      "org.jetbrains.kotlin.gradle.plugin.ide.IdeDependencyResolver;resolvedBy": "org.jetbrains.kotlin.gradle.plugin.ide.dependencyResolvers.IdeFriendSourceDependencyResolver"
+    }
+  }
+]

@@ -59,7 +59,7 @@ class AudioPrivacyMonitorAndroid(private val context: Context) : AudioPrivacyMon
                 AudioDeviceInfo.TYPE_BUILTIN_EARPIECE,
                 AudioDeviceInfo.TYPE_WIRED_HEADSET,
                 AudioDeviceInfo.TYPE_WIRED_HEADPHONES,
-                AudioDeviceInfo.TYPE_BLUETOETOOTH_SCO -> return Exposure.PRIVATE
+                AudioDeviceInfo.TYPE_BLUETOOTH_SCO -> return Exposure.PRIVATE
             }
         }
         return Exposure.UNVERIFIED // Default case

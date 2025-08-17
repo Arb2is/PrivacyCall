@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.speakpriv.android.androidApp-mergeReleaseResources-43:/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DENOB\\.gradle\\caches\\8.14.3\\transforms\\169e19e99c8a9639f9a63b13858bab91\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

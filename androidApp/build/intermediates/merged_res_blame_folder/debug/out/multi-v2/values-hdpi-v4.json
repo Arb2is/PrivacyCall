@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.speakpriv.android.androidApp-mergeDebugResources-43:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DENOB\\.gradle\\caches\\8.14.3\\transforms\\169e19e99c8a9639f9a63b13858bab91\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.speakpriv.android.androidApp-mergeDebugResources-43:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\DENOB\\.gradle\\caches\\8.14.3\\transforms\\169e19e99c8a9639f9a63b13858bab91\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
