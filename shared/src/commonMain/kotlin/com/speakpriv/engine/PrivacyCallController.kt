@@ -36,10 +36,13 @@ class PrivacyCallController(
         connectToPeer()
     }
 
+    private val jobs = mutableListOf<Job>()
+
     fun stop() {
         audioMonitor.stop()
         flagChannel.close()
-        coroutineScope.cancel() // Cancel the scope to clean up all coroutines
+        jobs.forEach { it.cancel() }
+        jobs.clear()
     }
 
     fun toggleSpeaker() {
@@ -48,20 +51,22 @@ class PrivacyCallController(
     }
 
     private fun monitorLocalExposure() {
-        audioMonitor.localExposure
+        val job = audioMonitor.localExposure
             .debounce(2500) // Debounce to avoid rapid state changes
             .onEach { exposure ->
                 _localState.value = exposure
                 flagChannel.sendExposureFlag(exposure == Exposure.EXPOSED)
             }
             .launchIn(coroutineScope)
+        jobs.add(job)
     }
 
     private fun connectToPeer() {
-        coroutineScope.launch {
+        val job = coroutineScope.launch {
             flagChannel.connect(callId)
             monitorRemoteExposure()
         }
+        jobs.add(job)
     }
 
     private fun monitorRemoteExposure() {
